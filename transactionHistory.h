@@ -22,12 +22,17 @@ class transactionHistory{
             Transaction transaction;
         };
 
+        // Nodes will be used to traverse linked list
         Node* head;
         Node* startPoint;
+
+        // This function adds transcations to linked list
         bool recordTransaction(const Transaction* transaction);
 
+        // Creates a transaction using input type as well as system time 
         void createTransaction(string type);
 
+        // Function will start at earliest transaction and traverse through linked list to print transactions
         void printTransactionHistory();
 };
 

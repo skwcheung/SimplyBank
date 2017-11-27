@@ -10,6 +10,7 @@ transactionHistory::transactionHistory(){
     startPoint = NULL;
 }
 
+// Creates a transaction using input type as well as system time 
 void transactionHistory::createTransaction(string type){
     Transaction* t = new Transaction;
     t->time = time(&now);
@@ -19,6 +20,7 @@ void transactionHistory::createTransaction(string type){
     transactionHistory::recordTransaction(t);
 }
 
+// This function adds transcations to linked list
 bool transactionHistory::recordTransaction(const Transaction* transaction){
     cout << "Transaction type " << transaction->type << " at " << transaction->time << endl;
     cout << "Head is pointing at " << head << endl;
@@ -40,9 +42,11 @@ bool transactionHistory::recordTransaction(const Transaction* transaction){
         head = newNode; // Finally head points to new node
         head->next = NULL;
         cout << "Head is now pointing at " << head << endl;
+        return true;
     }
 }
 
+// Function will start at earliest transaction and traverse through linked list to print transactions
 void transactionHistory::printTransactionHistory(){
     Node* searcher = startPoint;
     while(searcher != NULL){
