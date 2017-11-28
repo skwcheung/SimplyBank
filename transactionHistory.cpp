@@ -11,11 +11,12 @@ transactionHistory::transactionHistory(){
 }
 
 // Creates a transaction using input type as well as system time 
-void transactionHistory::createTransaction(string type){
+void transactionHistory::createTransaction(string type, double amount){
     Transaction* t = new Transaction;
     t->time = time(&now);
     Sleep(1000); // Sleep 1 second to distinguish transaction times
     t->type = type;
+    t->amount = amount;
 
     transactionHistory::recordTransaction(t);
 }

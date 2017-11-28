@@ -1,12 +1,14 @@
 #ifndef ACCOUNT_H
 #define ACCOUNT_H
 #include <iostream>
+#include "transactionHistory.h"
 
 using namespace std;
 
 class account{
     double balance;
     string name;
+    transactionHistory* history;
 
     public:
 
